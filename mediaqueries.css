@@ -1,0 +1,158 @@
+/* For larger screens (desktop navigation) */
+@media screen and (min-width: 1200px) {
+    #desktop-nav {
+        display: flex; /* Show desktop navigation */
+    }
+
+    #hamburger-nav {
+        display: none; /* Hide hamburger menu */
+    }
+
+    .about-containers {
+        flex-wrap: wrap;
+    }
+}
+
+/* For smaller screens (hamburger navigation) */
+@media screen and (max-width: 1199px) {
+    #desktop-nav {
+        display: none; /* Hide desktop navigation */
+    }
+
+    #hamburger-nav {
+        display: flex; /* Show hamburger menu */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 1rem; /* Padding to match the logo */
+        position: relative; /* Keeps it in place */
+        box-sizing: border-box; /* Ensures consistent spacing */
+    }
+
+    .hamburger-menu {
+        position: absolute; /* Position it relative to the nav */
+        top: 50%;
+        right: 1rem; /* Align it with the padding */
+        transform: translateY(-50%); /* Center vertically */
+    }
+
+    .menu-links {
+        display: none; /* Initially hide the dropdown */
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        z-index: 10;
+    }
+
+    .menu-links.open {
+        display: block; /* Display dropdown on toggle */
+    }
+
+     #experience, .experience-details-container {
+       margin: 2rem;
+     }
+
+     #profile, .section-container {
+        display: block;
+     }
+
+     .arrow {
+        display: none;
+     }
+
+     .section,
+     .section-container {
+        height: fit-content;
+     }
+
+     section {
+        margin: 0 5%;
+     }
+
+     .section__pic-container {
+        width: 275px;
+        height: 275px;
+        margin: 0 auto 2rem;
+     }
+
+     .about-containers{
+        margin-top: 0;
+     }
+
+
+}
+
+@media screen and (max-width: 600px) {
+    #contact, 
+    footer {
+        height: 40vh;
+
+    }
+
+    #profile {
+        height: 83vh;
+        margin-bottom: 0 ;
+    }
+
+    article {
+        font-size: 1rem;
+    }
+
+    footer 
+    nav {
+        height: fit-content;
+        margin-bottom: 2rem;
+    }
+
+    .about-containers, 
+    .contact-info-upper-container, .btn-container {
+        flex-wrap: wrap;
+    }
+
+    .contact-info-container{
+        margin: 0;
+    }
+
+    .contact-info-container 
+    p, .nav-links li a {
+       font-size: 1rem;
+    }
+
+    .experience-sub-title {
+        font-size: 1.25rem;
+    }
+
+    .logo {
+        font-size: 1.5 rem;
+    }
+
+    .nav-links-container {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .section__pic-container {
+        width: auto;
+        height: 46vw;
+        justify-content: center;
+    }
+
+    .section__text_p2 {
+        font-size: 1.25rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .text-container- {
+        text-align: justify;
+    }
+}
+
+
