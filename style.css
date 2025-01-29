@@ -2,14 +2,58 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
 
+/* Default (Light Mode) */
+:root, [theme="light"] {
+    --primary-color: white;
+    --primary-color-2: rgb(250,250,250);
+    --primary-color-3: rgb(181,181,250);
+    --background-color: rgb(255,255,255);
+    --secondary-color: black;
+    --links-color : black;
+    --secondary-color-2: rgb(85,85,85);
+    --button-background: rgb(53,53,53);
+    --button-text-hover: grey;
+    --button-border: rgb(53,53,53) 0.1rem solid;
+    --button-border-2: rgb(255,255,255) 0.1rem solid;
+    --container-border: rgb(163,163,163);
+}
+
+/* Dark Mode */
+[theme="dark"] {
+    --primary-color: black;
+    --primary-color-2: rgb(39,39,39);
+    --primary-color-3: rgb(74,74,74);
+    --background-color: rgb(33,33,33);
+    --secondary-color: white;
+    --links-color : black;
+    --secondary-color-2: rgb(170,170,170);
+    --button-background: rgb(202,202,202);
+    --button-text-hover: lightgrey;
+    --button-border: rgb(202,202,202) 0.1rem solid;
+    --button-border-2: rgb(0,0,0) 0.1rem solid;
+    --container-border: rgb(92,92,92);
+    --test-color: gold;
+}
+
+
 
 *{
     margin:0;
     padding:0;
 }
 
+h3 {
+    color: var(--secondary-color);
+}
+
+h4 {
+    color: var(--secondary-color);
+}
+
+
 body {
    font-family: "Poppins", sans-serif;
+   background-color: var(--background-color);
 }
 
 html {
@@ -17,7 +61,7 @@ html {
 }
 
 p {
-    color:rgb(85,85,85)
+    color: var(--secondary-color-2);
 }
 
 
@@ -31,11 +75,11 @@ a, .btn {
 
 nav, .nav-links {
     display: flex;
+    align-items: center;
 }
 
 nav {
     justify-content: space-around;
-    align-items: center;
     height: 17vh;
 }
 
@@ -45,21 +89,34 @@ nav {
     font-size: 2.5rem;
 }
 
+nav li:last-child {
+    width: max-content;
+    display: flex;
+    margin: auto;
+    padding: 10px;
+}
+
 a {
-    color: black;
+    color: var(--secondary-color);
     text-decoration: none;
-    text-decoration-color: white;
+    text-decoration-color: var(--primary-color);
 }
 
 a:hover {
-    color: grey;
+    
     text-decoration: underline;
     text-underline-offset: 3rem;
-    text-decoration-color: rgb(181, 181, 181);
+    text-decoration-color: var(--secondary-color);
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+    text-decoration-color: var(--secondary-color);
 }
 
 .logo {
     font-size: 3.1rem;
+    color: var(--secondary-color);
 }
 
 .logo-hover {
@@ -91,7 +148,7 @@ a:hover {
 .hamburger-icon span {
     width: 100%;
     height: 2px;
-    background-color: black;
+    background-color: var(--secondary-color);
     transition: all 0.3s ease-in-out;
 }
 
@@ -100,7 +157,7 @@ a:hover {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: aquamarine;
+    background-color: var(--primary-color);
     width: 250px; /* Adjust width */
     height: auto; /* Auto height to fit the content */
     display: none; /* Hidden by default */
@@ -127,7 +184,11 @@ a:hover {
 
 .menu-links a {
     text-decoration: none;
-    color: black;
+    color: var(--links-color);
+    display: block;
+    padding: 10px;
+    text-align: center;
+
 }
 
 .menu-links a:hover {
@@ -235,6 +296,7 @@ section {
   }
 
 .title {
+    color: var(--secondary-color);
     font-size:  3rem;
     text-align: center;
 }  
@@ -272,26 +334,27 @@ section {
 
 }
 
-.btn-color1, .btn-color-2 {
-   border: rgb(53,53,53) 0.1rem solid;
+.btn-color-1, .btn-color-2 {
+   border: var(--button-border);
+   color: var(--secondary-color-2);
 
 }
 
-.btn-color1:hover,
+.btn-color-1:hover,
  .btn-color-2:hover {
     cursor: pointer;
  
  }
 
- .btn-color1,
+ .btn-color-1,
  .btn-color-2:hover {
-    background: rgb(53,53,53);
-    color: white;
+    background: var(--button-background);
+    color: var(--primary-color);
  
  }
 
  .btn-color-1:hover {
-    background: rgb(0,0,0);
+    background: var(--secondary-color);
  }
 
  .btn-color-2 {
@@ -299,7 +362,8 @@ section {
  }
 
  .btn-color-2:hover {
-    border: rgb(255,255,255) 0.1 rem solid;
+    border: var(--button-border);
+    background: var(--secondary-color);
  }
 
  .btn-container {
@@ -342,10 +406,10 @@ section {
  .details-container {
     padding: 1.5rem;
     flex: 1;
-    background: white;
+    background: var(--primary-color-2);
     border-radius: 2rem;
-    border: rgb(53,53,53) 0.1rem solid;
-    border-color: rgb(163,163,163);
+    border: var(--button-border);
+    border-color: var(--container-border);
     text-align: center;
  }
 
@@ -368,7 +432,7 @@ section {
  }
 
  .experience-sub-title {
-    color: rgb(85,85,85);
+    color: var(--secondary-color);
     font-weight: 600;
     font-size: 1.75rem;
     margin-bottom: 2rem;
@@ -412,8 +476,8 @@ section {
  }
 
  .color-container {
-    border-color: rgb(163,163,163);
-    background: rgb(250,250,250);
+    border-color: var(--container-border);
+    background: var(--primary-color-2);
  }
 
  .project-img {
@@ -424,12 +488,12 @@ section {
 
 .project-title {
     margin: 1rem;
-    color: black;
+    color: var(--secondary-color);
 }
 
 .project-btn {
-    color: black;
-    border-color: rgb(163,163,163);
+    color: var(--secondary-color);
+    border-color: var(--container-border);
     
 }
 
@@ -445,9 +509,9 @@ section {
     display: flex;
     justify-content: center;
     border-radius: 2rem;
-    border: rgb(53,53,53) 0.1rem solid;
-    border-color: rgb(163,163,163);
-    background: rgb(250,250,250);
+    border: var(--button-border);
+    border-color: var(--container-border);
+    background: var(--background-color);
     margin: 2rem auto;
     padding: 0.5rem;
 }
@@ -484,4 +548,8 @@ footer {
 
 footer p{
     text-align: center;
+}
+
+.color-icon {
+    border-radius: 10rem;
 }
