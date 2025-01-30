@@ -505,34 +505,62 @@ section {
     flex-direction: column;
     height: 0cqi70vh;
 }
-.contact-info-upper-container{
+.contact-info-upper-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 2rem;
     border: var(--button-border);
     border-color: var(--container-border);
     background: var(--background-color);
     margin: 2rem auto;
-    padding: 0.5rem;
+    padding: 2rem;
+    max-width: 600px; /* Limits form width */
+    width: 90%; /* Ensures responsiveness */
 }
 
-.contact-info-container {
+.contact-info-upper-container form {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin: 1rem;
+    flex-direction: column;
+    width: 100%;
 }
 
-.contact-info-container p {
-    font-size: larger;
-
+.contact-info-upper-container label {
+    font-weight: bold;
+    margin: 0.5rem 0 0.2rem;
 }
 
-.contact-icon {
-    cursor: default;
-   
+.contact-info-upper-container input,
+.contact-info-upper-container textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--container-border);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    outline: none;
 }
+
+.contact-info-upper-container textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.btn {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: rgb(170,170,170);
+    color: black;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--button-hover-color);
+}
+
 
 .email-icon {
     height: 2.5rem;
